@@ -6,10 +6,17 @@ import DivColumn from "../atoms/DivColumn";
 import ControlPanel from "../organisms/ControlPanel";
 import HorizontalBorder from "../molecules/borders/HorizontalBorder";
 import VerticalBorder from "../molecules/borders/VerticalBorder";
+import RightBorder from "../molecules/borders/RightBorder";
+import RightBorderImage from "../../assets/right_border.png"
+import LeftBorderImage from "../../assets/left_border.png"
+import TopBorderImage from "../../assets/top_border.png"
+import BottomBorderImage from "../../assets/bottom_border.png"
+import DividerImage from "../../assets/divider.png"
+import PlayingField from "../organisms/PlayingField";
 
 const HomeWrap = styled(DivRow)`
     width: 550px;
-    height: 600px;
+    height: 635px;
     border-style: none;
     justify-content: start;
     align-items: center;
@@ -18,11 +25,15 @@ const HomeWrap = styled(DivRow)`
 function Home() {
     return (
         <HomeWrap>
-            <VerticalBorder isRight={false} />
+            <VerticalBorder src={LeftBorderImage} />
             <DivColumn>
-                <HorizontalBorder />
+                <HorizontalBorder src={TopBorderImage} />
+                <ControlPanel />
+                <HorizontalBorder src={DividerImage} />
+                <PlayingField />
+                <HorizontalBorder src={BottomBorderImage} />
             </DivColumn>
-            <VerticalBorder isRight={true} />
+            <VerticalBorder src={RightBorderImage} />
         </HomeWrap>
     );
 }
